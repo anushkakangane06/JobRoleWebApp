@@ -1,0 +1,12 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "MiniProjectDB",
+            "group": "Default",
+            "database": "C:\\Users\\Anushka\\Desktop\\MiniProject\\project.db"
+        }
+    ],
+    "sqltools.useNodeRuntime": true
+}

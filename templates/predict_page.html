@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!-- Flash messages -->
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    <div class="flash-container">
+      {% for category, message in messages %}
+        <div class="flash {{ category }}">{{ message }}</div>
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endwith %}
+
+<div class="card">
+    <h2>Select Resume for Prediction</h2>
+    <form method="POST">
+        <select name="resume" class="form-select">
+            <option value="">-- Select Resume --</option>
+            {% for resume in resumes %}
+            <option value="{{ resume }}">{{ resume }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit" class="btn btn-primary mt-2">Predict Role</button>
+    </form>
+</div>
+
+{% endblock %}

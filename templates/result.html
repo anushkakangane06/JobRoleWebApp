@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!-- Flash messages -->
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    <div class="flash-container">
+      {% for category, message in messages %}
+        <div class="flash {{ category }}">{{ message }}</div>
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endwith %}
+
+<div class="card result-card">
+    <h1>🚀 Prediction Result</h1>
+
+    <h2>💼 Recommended Role: {{ role }}</h2>
+    <p><strong>Confidence:</strong> {{ confidence }}%</p>
+
+    <h3>📊 Resume Score</h3>
+    <p>{{ score }}/100</p>
+
+    <h3>📋 Suggested Roles</h3>
+    <ul>
+        {% for r in actual_roles %}
+            <li>{{ r }}</li>
+        {% endfor %}
+    </ul>
+
+    <h3>🧠 Skills Detected</h3>
+    <ul>
+        {% for s in skills %}
+            <li>{{ s }}</li>
+        {% endfor %}
+    </ul>
+
+    <h3>❗ Skill Gap</h3>
+    <ul>
+        {% for s in missing_skills %}
+            <li>{{ s }}</li>
+        {% endfor %}
+    </ul>
+
+    <h3>📈 Job Demand</h3>
+    <p>{{ demand }}</p>
+
+    <h3>💰 Salary Range</h3>
+    <p>{{ salary }}</p>
+
+    <h3>📖 Role Description</h3>
+    <p>{{ description }}</p>
+
+    <h3>🤖 AI Advice</h3>
+    <p>{{ advice }}</p>
+
+    <!-- Buttons at the bottom -->
+    <div class="result-buttons mt-4">
+        <a href="{{ url_for('download_result', filename=filename) }}" class="btn btn-success">Download Result</a>
+        <a href="{{ url_for('predict_page') }}" class="btn btn-secondary">Back to Predict</a>
+    </div>
+</div>
+
+{% endblock %}

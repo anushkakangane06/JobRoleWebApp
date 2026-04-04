@@ -1,0 +1,118 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f4f6f9;
+}
+
+/* HEADER */
+.top-header {
+    position: fixed;
+    top: 0;
+    left: 220px;
+    width: calc(100% - 220px);
+    height: 70px;
+    background: linear-gradient(to right, #5f5cff, #8f5cff);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 220px;
+    height: 100vh;
+    background: #2f2f5e;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 20px;
+}
+
+
+/* APP NAME */
+.logo {
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* SIDEBAR MENU */
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    padding: 15px 20px;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    display: block;
+}
+
+.sidebar ul li:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+/* MAIN CONTENT */
+.main-content {
+    margin-left: 220px;
+    margin-top: 90px;
+    padding: 40px;
+}
+
+/* WELCOME CARD */
+.welcome-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+/* STATS */
+.stats {
+    display: flex;
+    gap: 25px;
+}
+
+/* STAT BOX */
+.stat-card {
+    flex: 1;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+/* NUMBER */
+.stat-card h3 {
+    font-size: 32px;
+    color: #5f5cff;
+}
+
+/* TEXT */
+.stat-card p {
+    margin-top: 10px;
+    color: #555;
+}
+

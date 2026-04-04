@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Job Role Recommendation System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+</head>
+
+<body>
+
+<!-- TOP HEADER -->
+<header class="top-header">
+    <div class="logo">AI Job Role Recommendation System</div>
+    <div class="user-info">
+        Welcome, {{ username }} |
+        <a href="/logout">Logout</a>
+    </div>
+</header>
+
+<div class="dashboard-container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <ul>
+            <li><a href="{{ url_for('dashboard') }}">🏠 Home</a></li>
+            <li><a href="{{ url_for('upload') }}">📄 Upload Resume</a></li>
+            <li><a href="{{ url_for('predict_page') }}">🤖 Predict Role</a></li>
+            <li><a href="{{ url_for('history') }}">📊 History</a></li>
+        </ul>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <div class="welcome-card">
+            <h2>Hello {{ username }} 👋</h2>
+            <p>Welcome to your dashboard. Manage your predictions and track your career journey here.</p>
+        </div>
+
+        <div class="stats">
+            <div class="stat-card">
+                <h3>{{ predictions }}</h3>
+                <p>Predictions Made</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>{{ resumes }}</h3>
+                <p>Resumes Uploaded</p>
+            </div>
+        </div>
+
+    </main>
+
+</div>
+
+</body>
+</html>
